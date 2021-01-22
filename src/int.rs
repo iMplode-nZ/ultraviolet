@@ -1,3 +1,4 @@
+use crate::{Vec2, Vec3, Vec4};
 use std::convert::{TryFrom, TryInto};
 use std::ops::*;
 
@@ -22,6 +23,16 @@ impl MulAdd<i32, i32> for i32 {
 
     fn mul_add(self, a: i32, b: i32) -> Self::Output {
         (self * a) + b
+    }
+}
+
+trait DummyU32Abs {
+    fn abs(self) -> Self;
+}
+
+impl DummyU32Abs for u32 {
+    fn abs(self) -> Self {
+        self
     }
 }
 
