@@ -1593,6 +1593,21 @@ macro_rules! mat4s {
             }
         }
 
+        impl From<$m3t> for $n {
+            #[inline]
+            fn from(mat3: $m3t) -> $n {
+                let cols = mat3.cols;
+                let zero = $t::splat(0.0);
+                let one = $t::splat(1.0);
+                Self::new(
+                    $vt::new(cols[0].x, cols[0].y, cols[0].z, zero),
+                    $vt::new(cols[1].x, cols[1].y, cols[1].z, zero),
+                    $vt::new(cols[2].x, cols[2].y, cols[2].z, zero),
+                    $vt::new(zero, zero, zero, one),
+                )
+            }
+        }
+
         impl Index<usize> for $n {
             type Output = $vt;
 
