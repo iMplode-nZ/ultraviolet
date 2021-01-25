@@ -20,9 +20,10 @@ bytemuck = { version = "1.4", optional = true }
 default = []
 f64 = []
 int = []
+int64 = []
 
 [dev-dependencies]
 serde_test = "1.0"
 
 [package.metadata.docs.rs]
-features = ["f64", "int", "serde", "mint", "bytemuck"]
+features = ["f64", "int", "int64", "serde", "mint", "bytemuck"]

@@ -1473,3 +1473,18 @@ IVec3!((IVec2, IVec3, IVec4) => i32);
 
 IVec4!(UVec4, UVec2, UVec3 => u32);
 IVec4!(IVec4, IVec2, IVec3 => i32);
+
+#[cfg(feature(int64))]
+IVec2!((ULVec2, ULVec3, ULVec4) => u64);
+#[cfg(feature(int64))]
+IVec2!((LVec2, LVec3, LVec4) => i64);
+
+#[cfg(feature(int64))]
+IVec3!((LVec2, LVec3, LVec4) => i64);
+#[cfg(feature(int64))]
+IVec3!((LVec2, LVec3, LVec4) => i64);
+
+#[cfg(feature(int64))]
+IVec4!((LVec2, LVec3, LVec4) => i64);
+#[cfg(feature(int64))]
+IVec4!((LVec2, LVec3, LVec4) => i64);
