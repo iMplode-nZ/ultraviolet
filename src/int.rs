@@ -1480,11 +1480,11 @@ IVec2!((ULVec2, ULVec3, ULVec4) => u64);
 IVec2!((LVec2, LVec3, LVec4) => i64);
 
 #[cfg(feature = "int64")]
-IVec3!((LVec2, LVec3, LVec4) => i64);
+IVec3!((ULVec2, ULVec3, ULVec4) => u64);
 #[cfg(feature = "int64")]
 IVec3!((LVec2, LVec3, LVec4) => i64);
 
 #[cfg(feature = "int64")]
-IVec4!((LVec2, LVec3, LVec4) => i64);
+IVec4!(ULVec4, ULVec3, ULVec2 => u64);
 #[cfg(feature = "int64")]
-IVec4!((LVec2, LVec3, LVec4) => i64);
+IVec4!(LVec4, LVec3, LVec2 => i64);
